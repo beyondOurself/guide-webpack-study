@@ -31,5 +31,6 @@ module.exports = {
         filename: '[name].bundle3.js',
         path: path.resolve(__dirname, 'dist'),
         publicPath: '/'
-    }
+    },
+    mode:"production"
 }
