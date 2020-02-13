@@ -1,19 +1,23 @@
-const path = require('path');
+var path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 module.exports = {
     entry: {
-        app:'./src/index.js',
-        print:'./src/print.js'
-    }, 
+        app: './src/index.js',
+    },
+    devServer:{
+        contentBase:'./dist'
+    },
     plugins:[
         new CleanWebpackPlugin({}),
-        new HtmlWebpackPlugin(
-            {title:'output Management'}
-        )
-    ], 
+        new HtmlWebpackPlugin({
+          title: 'Development'
+        })
+    ],
     output: {
-        filename: '[name].bundle3.js',
+        filename: 'webpack-numbers.js',
+        library:'webpackNumbers',
+        libraryTarget: 'var',
         path: path.resolve(__dirname, 'dist')
     }
 }
