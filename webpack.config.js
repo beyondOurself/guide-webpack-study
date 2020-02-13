@@ -12,6 +12,18 @@ module.exports = {
         contentBase: './dist',
         hot: true
     },
+    module: {
+        rules: [
+            // {
+            //     test: require.resolve('index.js'),
+            //     use: 'imports-loader?this=>window'
+            // },
+            {
+                test: require.resolve('globals.js'),
+                use: 'exports-loader?file,parse=helpers.parse'
+            }
+        ]
+    },
     plugins: [
         new HtmlWebpackPlugin({
             title: 'shimming'
