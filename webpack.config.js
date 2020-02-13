@@ -4,16 +4,15 @@ const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 module.exports = {
     entry: {
         app:'./src/index.js',
-        print:'./src/print.js'
     }, 
     plugins:[
         new CleanWebpackPlugin({}),
         new HtmlWebpackPlugin(
-            {title:'output Management'}
+            {title:'Caching'}
         )
     ], 
     output: {
-        filename: '[name].bundle3.js',
+        filename: '[name].[chunkhash].js',
         path: path.resolve(__dirname, 'dist')
     }
 }
